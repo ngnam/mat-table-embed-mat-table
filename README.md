@@ -1,3 +1,12 @@
-# angular-z2veaw
+# angular mat-table-embed-mat-table
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/angular-z2veaw)
+## demos
+
+* [Edit on StackBlitz ⚡️](https://stackblitz.com/edit/mat-table-embed-mat-table)
+
+## features
+
+* dragdrop item row in table
+* use selection model checkbox
+* use selection all
+* mat-table row embed mat-table (tree-view)

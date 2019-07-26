@@ -18,12 +18,14 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["src/styles"]
+            },
+            "assets": ["src/assets", "src/favicon.ico"],
             "styles": [
-              "src/styles.css"
+              "src/styles/theme.scss",
+              "src/styles/mixin.scss",
+              "src/styles/styles.scss"
             ],
             "scripts": []
           },

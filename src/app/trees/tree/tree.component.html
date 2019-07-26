@@ -1,0 +1,39 @@
+<div class="control-panel">
+  <div class="button-panel">
+    <button mat-raised-button type="button" matTooltip="Select config">Select config</button>
+    <button mat-raised-button type="button" matTooltip="Emunator Config" class="primary-contrast">Emunator
+      Config</button>
+    <button mat-raised-button type="button" matTooltip="Add" class="primary-contrast">Add</button>
+    <button mat-raised-button type="button" matTooltip="Clone" class="primary-contrast">Clone</button>
+    <button mat-raised-button type="button" matTooltip="Remove" class="primary-contrast">Remove</button>
+    <button mat-raised-button color="primary" type="button" matTooltip="Run">Run</button>
+  </div>
+</div>
+<div class="content-container">
+  <div class="tree-container">
+    <table mat-table #table [dataSource]="dataSource" class="mat-table-example">
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef>
+          <!-- Checkbox ALL -->
+          <mat-checkbox (change)="$event ? masterToggle() : null" [checked]="selection.hasValue() && isAllSelected()"
+            [indeterminate]="selection.hasValue() && !isAllSelected()">
+          </mat-checkbox>
+          No.
+        </th>
+        <td mat-cell *matCellDef="let element">
+          <!-- Checkbox row item -->
+          <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(element) : null"
+            [checked]="selection.isSelected(element)">
+          </mat-checkbox>
+          {{element.name}}
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns; let index=index" (click)="expandRow(index)" #cdkrow>
+      </tr>
+    </table>
+  </div>
+</div>
