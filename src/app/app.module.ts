@@ -9,6 +9,10 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./trees/trees.module').then(m => m.TreesModule)
+  },
+  {
+    path: 'table',
+    loadChildren: () => import('./tables/tables.module').then(m => m.TablesModule)
   }
 ];
 
